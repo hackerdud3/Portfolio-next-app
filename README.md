@@ -4,17 +4,8 @@
 
 Welcome to my portfolio! This repository contains a showcase of my professional work, skills, and projects.
 
-## Structure
 
-- `/projects`: Showcase of my key projects
-- `/assets`: Images, documents and other media files
-- `/src`: Source code for the portfolio website
-
-## Local Development
-
-1. Clone this repository
-2. Open `index.html` in your browser
-3. Make changes as needed## Hi there 👋
+## Hi there 👋
    I'm Nandhikanti Vinay Kumar, a passionate Software Engineer | Full Stack Developer.
    I'm open to Software Engineer roles, please contact nandhikantivinayk@gmail.com
 
