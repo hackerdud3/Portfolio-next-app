@@ -33,7 +33,7 @@ export function ProjectCard({
         <h3 className="text-xl font-bold">{title}</h3>
         <ExternalLink size={16} />
       </CardHeader>
-      <CardBody className="px-4">
+      <CardBody className="px-4 lg:h-44">
         <p className="text-default-500 mb-4">{description}</p>
         <div className="flex gap-2 flex-wrap">
           {technologies.map((tech) => (

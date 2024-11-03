@@ -56,7 +56,7 @@ export function Experience() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="experience" className="py-20" ref={containerRef}>
+    <section id="experience" className="lg:py-20 py-10" ref={containerRef}>
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,9 +79,9 @@ export function Experience() {
               >
                 <Card className="bg-background/40 backdrop-blur-md border border-white/10">
                   <CardHeader className="flex flex-col sm:flex-row justify-between px-6">
-                    <div>
+                    <div className=" flex justify-center items-center md:items-start flex-col">
                       <h3 className="text-xl font-bold">{exp.title}</h3>
-                      <p className="text-primary">{exp.company}</p>
+                      <p className="text-primary text-nowrap">{exp.company}</p>
                     </div>
                     <p className="text-default-500">{exp.period}</p>
                   </CardHeader>

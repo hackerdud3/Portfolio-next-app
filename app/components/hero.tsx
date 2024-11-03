@@ -7,7 +7,7 @@ import { FloatingSkills } from "./floating-skills";
 
 export function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[90vh] text-center px-4">
+    <section className="relative flex flex-col items-center justify-center min-h-[90vh] text-center px-4 ">
       <FloatingSkills />
       <motion.div
         initial={{ opacity: 0, y: 20 }}

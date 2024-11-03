@@ -45,7 +45,7 @@ export function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="projects" className="py-20" ref={containerRef}>
+    <section id="projects" className="lg:py-20 py-10" ref={containerRef}>
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
