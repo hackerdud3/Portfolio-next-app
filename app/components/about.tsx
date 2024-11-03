@@ -1,9 +1,8 @@
 "use client";
 
 import { Card, CardBody, Chip } from "@nextui-org/react";
-import Script from "next/script";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import LinkedInBadge from "./linkedin-badge";
 
 const skills = {
   Frontend: [
@@ -39,68 +38,9 @@ const skills = {
   ],
 };
 
-function LinkedInBadgeCompact() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  return (
-    <div className="w-full lg:w-[330px] flex-shrink-0">
-      <Script
-        src="https://platform.linkedin.com/badges/js/profile.js"
-        strategy="afterInteractive"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="bg-transparent rounded-xl "
-      >
-        <style jsx global>{`
-          .LI-profile-badge {
-            width: 100% !important;
-          }
-          .LI-profile-badge.dark {
-            background: transparent !important;
-          }
-          .LI-profile-badge .LI-profile-pic {
-            display: none !important;
-          }
-          .dark-theme {
-            background: transparent !important;
-          }
-        `}</style>
-        <div
-          className="badge-base LI-profile-badge pl-5"
-          data-locale="en_US"
-          data-size="medium"
-          data-theme="dark"
-          data-type="HORIZONTAL"
-          data-vanity="nandhi-kanti-vinay"
-          data-version="v1"
-        >
-          <a
-            className="badge-base__link LI-simple-link"
-            href="https://www.linkedin.com/in/nandhi-kanti-vinay?trk=profile-badge"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="View Nandhi Kanti Vinay's profile on LinkedIn"
-          />
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
 export function About() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="lg:py-20 py-10">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -141,8 +81,10 @@ export function About() {
                     </div>
                   ))}
                 </div>
-                <div className="hidden lg:block">
-                  <LinkedInBadgeCompact />
+                <div className="w-full lg:w-auto flex justify-center items-start">
+                  <div className="w-[300px] sm:w-[350px] lg:w-[300px] flex">
+                    <LinkedInBadge />
+                  </div>
                 </div>
               </div>
             </CardBody>
