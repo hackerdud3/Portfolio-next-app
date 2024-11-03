@@ -83,9 +83,9 @@ Here are some ideas to get you started:
 
 Feel free to reach out to me for collaborations or opportunities:
 
-- Email: [Your Email]
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
+- Email: [nandhikantivinayk@gmail.com]
+- LinkedIn: [https://www.linkedin.com/in/nandhi-kanti-vinay/]
+- GitHub: [https://github.com/hackerdud3]
 
 ## License
 
