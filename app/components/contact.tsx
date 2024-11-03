@@ -49,14 +49,14 @@ export function Contact() {
 
     try {
       const result = await emailjs.send(
-        process.env.SERVICE_ID as string,
-        process.env.EMPLATE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         {
           from_name: formData.name,
           reply_to: formData.email,
           message: formData.message,
         },
-        process.env.PUBLIC_KEY as string
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       );
 
       if (result.text === "OK") {
