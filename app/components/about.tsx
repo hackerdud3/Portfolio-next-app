@@ -60,7 +60,7 @@ function LinkedInBadgeCompact() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-transparent rounded-xl p-4"
+        className="bg-transparent rounded-xl "
       >
         <style jsx global>{`
           .LI-profile-badge {
