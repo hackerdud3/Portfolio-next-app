@@ -61,7 +61,6 @@ export function Certifications() {
 
   const CARD_WIDTH = 350;
   const CARD_GAP = 24;
-  const VISIBLE_CARDS = 3; // Number of cards visible at once on desktop
 
   useEffect(() => {
     const container = scrollContainerRef.current;
