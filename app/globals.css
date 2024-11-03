@@ -105,21 +105,6 @@
   }
 }
 
-/* Add to globals.css */
-.linkedin-badge-container {
-  max-width: 100%;
-  width: fit-content;
-  overflow: hidden;
-  transform: scale(0.9);
-}
-
-@media (max-width: 768px) {
-  .linkedin-badge-container {
-    transform: scale(0.8);
-    margin: 0 auto;
-  }
-}
-
 @layer utilities {
   .animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -156,4 +141,10 @@
   .snap-center {
     scroll-snap-align: center;
   }
+}
+
+.badge-base {
+  background: transparent !important; /* Ensure background is transparent */
+  border: none !important; /* Remove any border if necessary */
+  box-shadow: none !important; /* Remove any default box-shadow */
 }
