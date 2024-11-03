@@ -6,17 +6,25 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarMenu,
+  NavbarMenuToggle,
   Link,
   Button,
 } from "@nextui-org/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { ResumeButton } from "./resume-button";
+import { Menu } from "lucide-react";
+import { MobileResumeButton, ResumeButton } from "./resume-button";
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
+
+  // Handle initial mount to prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
@@ -29,11 +37,14 @@ export function NavBar() {
     { name: "Contact", href: "#contact" },
   ];
 
+  if (!mounted) return null;
+
   return (
     <motion.div
+      initial={{ backgroundColor: "transparent" }}
       animate={{
-        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.8)" : "transparent",
-        backdropFilter: isScrolled ? "blur(10px)" : "none",
+        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.7)" : "transparent",
+        backdropFilter: isScrolled ? "blur(20px)" : "none",
       }}
       transition={{ duration: 0.2 }}
       className="fixed top-0 w-full z-50"
@@ -44,11 +55,23 @@ export function NavBar() {
         className="bg-transparent"
         classNames={{
           wrapper: "px-4 sm:px-6 md:px-8 max-w-7xl mx-auto",
+          toggle: "text-white",
         }}
         height="4.5rem"
       >
-        <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-          <NavbarBrand as="li" className="gap-3 max-w-fit">
+        <NavbarContent className="gap-4">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden text-white"
+            icon={(isOpen) => (
+              <Menu
+                className={`w-6 h-6 transition-transform ${
+                  isOpen ? "rotate-90" : "rotate-0"
+                }`}
+              />
+            )}
+          />
+          <NavbarBrand>
             <Link
               className="font-bold text-inherit hover:text-primary transition-colors"
               href="/"
@@ -63,13 +86,17 @@ export function NavBar() {
             </Link>
           </NavbarBrand>
         </NavbarContent>
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <ResumeButton />
-        </motion.div>
+
+        <NavbarContent className="hidden sm:flex">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <ResumeButton />
+          </motion.div>
+        </NavbarContent>
+
         <NavbarContent
           className="hidden sm:flex basis-1/5 sm:basis-full"
           justify="end"
@@ -111,7 +138,11 @@ export function NavBar() {
           </div>
         </NavbarContent>
 
-        <NavbarMenu className="bg-background/80 backdrop-blur-md mt-2">
+        <NavbarMenu className="bg-background/95 backdrop-blur-md mt-2 pt-8">
+          <NavbarItem className="mb-6">
+            <MobileResumeButton />
+          </NavbarItem>
+
           {menuItems.map((item, index) => (
             <motion.div
               key={item.name}
@@ -121,7 +152,7 @@ export function NavBar() {
             >
               <NavbarItem>
                 <Link
-                  className="w-full text-foreground/80 hover:text-primary transition-colors"
+                  className="w-full text-foreground/80 hover:text-primary transition-colors py-2"
                   href={item.href}
                   size="lg"
                   onClick={() => setIsMenuOpen(false)}
@@ -131,6 +162,22 @@ export function NavBar() {
               </NavbarItem>
             </motion.div>
           ))}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            <Button
+              as={Link}
+              href="mailto:nandhikantivinayk@gmail.com"
+              variant="flat"
+              color="primary"
+              radius="full"
+              className="font-medium text-sm text-primary w-full"
+            >
+              Contact Me
+            </Button>
+          </motion.div>
         </NavbarMenu>
       </Navbar>
     </motion.div>
