@@ -27,3 +27,28 @@ export function ResumeButton() {
     </Button>
   );
 }
+
+export function MobileResumeButton() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/vinay_resume.pdf";
+    link.download = "Nandhikanti_Vinay_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <Button
+      color="primary"
+      variant="shadow"
+      radius="full"
+      size="sm"
+      startContent={<Download />}
+      onClick={handleDownload}
+      className="font-medium"
+    >
+      Resume
+    </Button>
+  );
+}
