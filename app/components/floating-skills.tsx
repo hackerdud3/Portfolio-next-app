@@ -16,7 +16,7 @@ const skillIcons = [
   {
     Icon: SiReact,
     color: "#61DAFB",
-    position: { top: "25%", left: "20%" },
+    position: { top: "19%", left: "20%" },
     animate: {
       y: ["0%", "-50%", "0%"],
       x: ["0%", "30%", "0%"],
