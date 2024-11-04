@@ -10,7 +10,21 @@ const projects = [
     description:
       "Developed an RAG application using LangChain and GPT for personalized interview coaching copilot. Achieved 92% accuracy in context-aware responses.",
     technologies: ["Python", "LangChain", "RAG", "FastAPI", "Pinecone"],
-    projectUrl: "https://github.com/hackerdud3/PrepPalBot",
+    projectUrl: "https://preppalbot.onrender.com/",
+  },
+  {
+    title: "My Career Champ",
+    description:
+      "Developed an AI resume builder using React.js and Python, serving 100+ university students.",
+    technologies: [
+      "React",
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "OpenAI API",
+      "Google Cloud",
+    ],
+    projectUrl: "  https://www.mycareerchamp.org",
   },
   {
     title: "Picture Perfect",
