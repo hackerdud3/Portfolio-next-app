@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
+import { Button, useDisclosure } from "@nextui-org/react";
 import { Download } from "lucide-react";
 
 export function ResumeButton() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/vinay_resume.pdf";
+    link.href = "/vinay_nandhikanti_swe.pdf";
     link.download = "Nandhikanti_Vinay_Resume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -31,7 +31,7 @@ export function ResumeButton() {
 export function MobileResumeButton() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/vinay_resume.pdf";
+    link.href = "/vinay_nandhikanti_swe.pdf";
     link.download = "Nandhikanti_Vinay_Resume.pdf";
     document.body.appendChild(link);
     link.click();
