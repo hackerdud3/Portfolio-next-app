@@ -21,7 +21,6 @@ export function NavBar() {
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
 
-  // Handle initial mount to prevent hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -52,7 +51,7 @@ export function NavBar() {
       <Navbar
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
-        className="bg-transparent"
+        className="bg-transparent backdrop-blur-none "
         classNames={{
           wrapper: "px-4 sm:px-6 md:px-8 max-w-7xl mx-auto",
           toggle: "text-white",
