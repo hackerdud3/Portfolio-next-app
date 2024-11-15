@@ -17,7 +17,7 @@
     "lucide-react": "^0.454.0",
     "next": "15.0.2",
     "next-themes": "^0.3.0",
-    "pdfjs-dist": "^4.0.269",
+    "pdfjs-dist": "^4.8.69",
     "portfolio": "file:",
     "prisma": "^5.21.1",
     "react": "^18",

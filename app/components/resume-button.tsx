@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, useDisclosure } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { Download } from "lucide-react";
 
 export function ResumeButton() {
