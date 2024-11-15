@@ -27,15 +27,15 @@ export function ProjectCard({
     <Card
       isPressable
       onClick={() => handleClick(projectUrl)}
-      className="bg-background/40 backdrop-blur-md border border-white/10 hover:scale-[1.02]"
+      className="bg-background/40 backdrop-blur-md border border-white/10 hover:scale-[1.02] h-full flex flex-col"
     >
       <CardHeader className="flex gap-2 px-4 pb-0 justify-between">
         <h3 className="text-xl font-bold">{title}</h3>
         <ExternalLink size={16} />
       </CardHeader>
-      <CardBody className="px-4 lg:h-44">
-        <p className="text-default-500 mb-4">{description}</p>
-        <div className="flex gap-2 flex-wrap">
+      <CardBody className="px-4 flex-grow flex flex-col">
+        <p className="text-default-500 mb-4 flex-grow">{description}</p>
+        <div className="flex gap-2 flex-wrap mt-auto">
           {technologies.map((tech) => (
             <Chip
               key={tech}
