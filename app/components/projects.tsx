@@ -24,7 +24,7 @@ const projects = [
       "OpenAI API",
       "Google Cloud",
     ],
-    projectUrl: "  https://www.mycareerchamp.org",
+    projectUrl: "https://www.mycareerchamp.org/sign-up",
   },
   {
     title: "Picture Perfect",
