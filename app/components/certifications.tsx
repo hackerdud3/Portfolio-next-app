@@ -25,7 +25,7 @@ const certifications: Certification[] = [
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     date: "2024",
-    pdfUrl: "/certificates/aws-cloud-practitioner.pdf",
+    pdfUrl: "/certificates/aws-cloud-certification.pdf",
     credentialUrl: "https://www.credly.com/earner/earned/badge/d85fb476-f8a6-49c9-900e-9f48a5d6d43e",
   },
   {
